@@ -1,4 +1,5 @@
 Overview
+
 This Java-based application provides an interactive GUI for calculating different accounting concepts, including different types of inventory costing, 
 allocating support departments costs and allocating MOH departments costs
 Please note that by nature of floating numbers in computers, numbers might be different specialliy in calculation heavy methods like reciprocal
