@@ -73,8 +73,9 @@ public class MOHCostAllocationController {
 
 	public String compare() {
 		if (abcAns.isEmpty())
-			abcAns = obj.calculate(MOHAllocationMethod.ABC, new StepsCollector());// if didnt calculate abc before comparison
-		return formatComparisonOutput(obj.comparePeanutToABC(pbAns,abcAns));
+			abcAns = obj.calculate(MOHAllocationMethod.ABC, new StepsCollector());// if didnt calculate abc before
+																					// comparison
+		return formatComparisonOutput(obj.comparePeanutToABC(pbAns, abcAns));
 	}
 
 	public void allocateUnits(double allocation, String department, String product) {
@@ -96,7 +97,7 @@ public class MOHCostAllocationController {
 	public Department getDepartment(String name) {
 		ArrayList<Department> arr = obj.getMohDepartments();
 		for (Department dep : arr) {
-			if (dep.getName().equals(name))
+			if (dep.getName().equalsIgnoreCase(name))
 				return dep;
 		}
 		return null;
@@ -145,7 +146,8 @@ public class MOHCostAllocationController {
 		if (steps != null && !steps.isEmpty()) {
 			formattedAnswer.append(
 					"<div style='margin-top:20px;padding:10px;background-color:#f9f9f9;border:1px solid #ddd;'>")
-					.append("<h3 style='margin-bottom:10px;'>Steps:</h3>").append("<ul style='padding-left:20px;'>");
+					.append("<h3 style='margin-top:15px; color:#483D8B; text-align:center; font-size:20px; font-weight:bold;'>Calculation Steps:</h3>")
+					.append("<ul style='padding-left:20px;'>");
 
 			// Add each step as a list item
 			for (String step : steps) {

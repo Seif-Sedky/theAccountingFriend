@@ -97,7 +97,7 @@ public class SupportDepartmentCostAllocationController {
 	    formattedAnswer.append("</table>"); // Close table
 
 	    // Append Steps
-	    formattedAnswer.append("<h3 style='margin-top:15px; color:#483D8B; text-align:center; font-size:20px; font-weight:bold; text-decoration:underline;'>Calculation Steps:</h3>");
+	    formattedAnswer.append("<h3 style='margin-top:15px; color:#483D8B; text-align:center; font-size:20px; font-weight:bold;'>Calculation Steps:</h3>");
 	    formattedAnswer.append("<ul style='padding-left:18px;margin-top:5px;'>");
 	    for (String step : collector.getSteps()) {
 	        formattedAnswer.append("<li style='margin-bottom:3px;'>").append(step).append("</li>");

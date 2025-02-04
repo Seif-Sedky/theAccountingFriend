@@ -156,7 +156,7 @@ public class MOHCostAllocationView {
 			if (!mohDeptName.isEmpty() && !costsText.isEmpty()) {
 				try {
 					Double costs = Double.parseDouble(costsText);
-					controller.addSupportDepartment(mohDeptName, costs);// get interdepartmental costs
+					controller.addSupportDepartment(mohDeptName, costs);// get interdepartmental costs, case ignored in searching in controller
 					JOptionPane.showMessageDialog(currentFrame, "MOH Department added successfully!");
 					mohDeptField.setText("");
 					costsField.setText("");
@@ -361,7 +361,7 @@ public class MOHCostAllocationView {
 				singleDep = JOptionPane.showInputDialog(fourthFrame, "Enter name of single department:");
 				if (singleDep == null)
 					break;
-				else if (controller.departmentExists(singleDep.trim().toLowerCase())) {
+				else if (controller.departmentExists(singleDep.trim())) {//case ignored in search
 					fourthFrame.dispose();
 					openAnswerWindow(MOHAllocationMethod.PEANUTBUTTER, singleDep);
 					break;
@@ -483,7 +483,7 @@ public class MOHCostAllocationView {
 	                        "Enter name of single department:");
 	                if (singleDepartment == null) // User clicked X or didn't enter a department
 	                    break;
-	                else if (controller.departmentExists(singleDepartment.trim().toLowerCase())) {
+	                else if (controller.departmentExists(singleDepartment.trim())) {
 	                    controller.getPBAns(singleDepartment); // Ensure data is ready for comparison
 	                    break;
 	                } else {

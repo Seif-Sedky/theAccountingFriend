@@ -45,6 +45,8 @@ public class CostObjectClassifier {
 		// Office Costs (Period Costs)
 		classificationRules.put("office rent", "period,-,fixed");
 		classificationRules.put("office utilities", "period,-,variable");
+		classificationRules.put("office supplies", "period,-,variable");
+
 		classificationRules.put("depreciation on office equipment", "period,-,fixed");
 		classificationRules.put("administrative salaries", "period,-,fixed");
 		classificationRules.put("advertising expenses", "period,-,fixed");
